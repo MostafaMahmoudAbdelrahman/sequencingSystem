@@ -3,19 +3,13 @@ using UnityEngine;
 [System.Serializable]
 public class PlayAnimationAction : ISequenceAction
 {
-    private Animator animator;
-    private string animationName;
-    private bool waitForCompletion;
+    public Animator animator;
+    public string triggerName;
+    public bool waitForCompletion;
 
-    public PlayAnimationAction(Animator anim, string animName, bool wait)
-    {
-        animator = anim;
-        animationName = animName;
-        waitForCompletion = wait;
-    }
     IEnumerator ISequenceAction.Execute()
     {
-        animator.Play(animationName);
+        animator.SetTrigger(triggerName);
         if (waitForCompletion)
         {
             // Wait for the animation to finish playing

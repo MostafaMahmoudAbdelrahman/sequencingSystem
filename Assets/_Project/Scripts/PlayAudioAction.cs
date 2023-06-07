@@ -3,16 +3,9 @@ using UnityEngine;
 [System.Serializable]
 public class PlayAudioAction : ISequenceAction
 {
-    private AudioSource audioSource;
-    private AudioClip audioClip;
-    private bool waitForCompletion;
-
-    public PlayAudioAction(AudioSource audioSrc, AudioClip clip, bool wait)
-    {
-        audioSource = audioSrc;
-        audioClip = clip;
-        waitForCompletion = wait;
-    }
+    public AudioSource audioSource;
+    public AudioClip audioClip;
+    public bool waitForCompletion;
 
    IEnumerator ISequenceAction.Execute()
     {

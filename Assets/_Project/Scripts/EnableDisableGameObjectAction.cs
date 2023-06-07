@@ -3,15 +3,8 @@ using UnityEngine;
 [System.Serializable]
 public class EnableDisableGameObjectAction : ISequenceAction
 {
-    private GameObject gameObject;
-    private bool enable;
-
-    public EnableDisableGameObjectAction(GameObject obj, bool en)
-    {
-        gameObject = obj;
-        enable = en;
-    }
-
+    public GameObject gameObject;
+    public bool enable;
     IEnumerator ISequenceAction.Execute()
     {
         gameObject.SetActive(enable);

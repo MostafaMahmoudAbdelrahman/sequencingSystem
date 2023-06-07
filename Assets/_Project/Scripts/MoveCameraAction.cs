@@ -4,19 +4,13 @@ using UnityEngine;
 public class MoveCameraAction : ISequenceAction
 {
     private Transform cameraTransform;
-    private Vector3 targetPosition;
-    private Quaternion targetRotation;
-    private float duration;
+    public Vector3 targetPosition;
+    public Quaternion targetRotation;
+    public float duration;
 
-    public MoveCameraAction(Transform camTransform, Vector3 targetPos, Quaternion targetRot, float dur)
-    {
-        cameraTransform = camTransform;
-        targetPosition = targetPos;
-        targetRotation = targetRot;
-        duration = dur;
-    }
     IEnumerator ISequenceAction.Execute()
     {
+        cameraTransform=Camera.main.transform ;
         Vector3 startPosition = cameraTransform.position;
         Quaternion startRotation = cameraTransform.rotation;
         float elapsedTime = 0.0f;
